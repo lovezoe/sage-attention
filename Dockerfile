@@ -8,4 +8,6 @@ RUN . .venv/bin/activate && \
     pip3 install packaging && \
     pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128 && \
     python3 setup.py bdist_wheel
-RUN ls -lh dist
+
+FROM alpine:edge
+COPY --from builder /SageAttention/dist/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl /sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
