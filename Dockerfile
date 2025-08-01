@@ -10,4 +10,4 @@ RUN . .venv/bin/activate && \
     python3 setup.py bdist_wheel
 
 FROM alpine:edge
-COPY --from builder /SageAttention/dist/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl /sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
+COPY --from=builder /SageAttention/dist/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl /sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
