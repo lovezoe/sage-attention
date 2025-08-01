@@ -8,4 +8,4 @@ RUN . .venv/bin/activate && \
     pip3 install packaging && \
     pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128 && \
     python3 setup.py bdist_wheel
-RUN ls -lh
+RUN ls -lh dist
