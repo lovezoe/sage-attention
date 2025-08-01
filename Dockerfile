@@ -6,6 +6,6 @@ RUN sed -i 's/HAS_SM80 = False/HAS_SM80 = True/' setup.py && sed -i 's/compute_c
 RUN python3 -m venv .venv
 RUN . .venv/bin/activate && \
     pip3 install packaging && \
-    pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 && \
+    pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128 && \
     python3 setup.py bdist_wheel
 RUN ls -lh
